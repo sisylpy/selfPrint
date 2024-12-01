@@ -60,6 +60,11 @@
       "target": "nsis",
       "icon": "assets/icons.ico"
     },
+    "publish": {
+    "provider": "github",
+    "owner": "sisylpy",
+    "repo": "selfPrint"
+  },
     "mac": {
       "category": "public.app-category.utilities",
       "target": "dmg",

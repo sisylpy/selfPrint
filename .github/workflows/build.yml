@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  # 使用 Windows 环境构建
 
     steps:
     - name: Checkout repository
@@ -19,12 +19,10 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
-    - name: Build Electron app
-      run: |
-        npm run electron-build-win
+    - name: Build Electron app for Windows
+      run: npm run electron-build-win  # 或者你已经配置的构建命令
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
