@@ -55,12 +55,7 @@
   },
   "build": {
     "appId": "com.lizi.jingjing",
-    "publish": {
-      "provider": "github",
-      "owner": "sisylpy",
-      "repo": "selfPrint",
-     "token":  "${process.env.GH_TOKEN}"
-    },
+   
     "win": {
       "target": "nsis",
       "icon": "assets/icons.ico"

@@ -22,9 +22,6 @@ jobs:
       run: |
         npm install
 
-    - name: Set GH_TOKEN environment variable
-      run: echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-
     - name: Build Electron app
       run: |
         npm run electron-build-win
