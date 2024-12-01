@@ -59,7 +59,7 @@
       "provider": "github",
       "owner": "sisylpy",
       "repo": "selfPrint",
-     "token":  "${process.env.GH_TOKEN}"
+     "token":  "${secrets.GH_TOKEN}"
     },
     "win": {
       "target": "nsis",
