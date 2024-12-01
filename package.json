@@ -58,8 +58,7 @@
     "publish": {
       "provider": "github",
       "owner": "sisylpy",
-      "repo": "selfPrint",
-      "token":  "${GH_TOKEN}"  
+      "repo": "selfPrint"
     },
     "win": {
       "target": "nsis",
