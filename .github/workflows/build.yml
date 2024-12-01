@@ -26,6 +26,9 @@ jobs:
       run: |
         npm run electron-build-win
 
+    - name: Set GH_TOKEN environment variable
+      run: echo "GH_TOKEN=${{secrets.GH_TOKEN}}" >> $GITHUB_ENV
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
