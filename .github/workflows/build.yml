@@ -28,8 +28,6 @@ jobs:
     - name: Build Electron app
       run: |
         npm run electron-build-win
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
