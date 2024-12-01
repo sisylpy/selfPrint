@@ -29,7 +29,7 @@ jobs:
       run: |
         npm run electron-build-win
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 显式传递 GH_TOKEN 给 electron-builder
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
