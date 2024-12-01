@@ -1,0 +1,133 @@
+{
+  "name": "grain",
+  "private": true,
+  "version": "0.0.0",
+  "main": "main.js",
+  "engines": {
+    "node": "v18.17.0"
+  },
+  "scripts": {
+    "preview": "vite preview",
+    "dev": "cross-env NODE_ENV=development vite",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "start": "cross-env NODE_ENV=development electron .",
+    "vue-build": "vite build",
+    "electron-build": "electron-builder",
+    "electron-build-win": "electron-builder --win"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "@nut-tree/nut-js": "^3.1.2",
+    "admin-lte": "^4.0.0-beta2",
+    "axios": "^1.7.8",
+    "bootstrap": "^5.3.3",
+    "bootstrap-vue-3": "^0.5.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "jquery": "^3.7.1",
+    "jspdf": "^2.5.2",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "cross-env": "^7.0.3",
+    "devtron": "^1.4.0",
+    "electron": "^13.6.9",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2",
+    "nodemon": "^3.1.7",
+    "vite": "^6.0.1",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-static-copy": "^2.2.0",
+    "vue-devtools": "^5.0.0-beta.1"
+  },
+  "build": {
+    "appId": "com.lizi.jingjing",
+    "win": {
+      "target": [
+        "msi",
+        "zip"
+      ],
+      
+      "artifactName": "self_print_setup.exe",
+      "defaultArch": "x64"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "icon": "assets/icons.icns"
+    },
+    "files": [
+      "package.json",
+      "main.js",
+      "dist/**/*",
+      "src/preload.js",
+      "resources/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/avcodec-61.dll",
+        "to": "resources/avcodec-61.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/avutil-59.dll",
+        "to": "resources/avutil-59.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/avformat-61.dll",
+        "to": "resources/avformat-61.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/avdevice-61.dll",
+        "to": "resources/avdevice-61.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/swresample-5.dll",
+        "to": "resources/swresample-5.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/swscale-8.dll",
+        "to": "resources/swscale-8.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/avfilter-10.dll",
+        "to": "resources/avfilter-10.dll",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/postproc-58.dll",
+        "to": "resources/postproc-58.dll",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    }
+  }
+}
