@@ -22,9 +22,6 @@ jobs:
       run: |
         npm install
 
-    - name: Debug GH_TOKEN
-      run: echo "GH_TOKEN=${{ secrets.GH_TOKEN }}"
-
     - name: Set GH_TOKEN environment variable
       run: echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
 
@@ -32,7 +29,7 @@ jobs:
       run: |
         npm run electron-build-win
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 确保传递 GH_TOKEN 给 electron-builder
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}  # 显式传递 GH_TOKEN 给 electron-builder
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
